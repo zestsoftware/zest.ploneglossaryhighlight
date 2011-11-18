@@ -1,0 +1,17 @@
+*.egg-info
+*.mo
+*.pyc
+*.pyo
+.DS_Store
+.installed.cfg
+.mr.developer.cfg
+bin
+build
+coverage
+develop-eggs
+dist
+downloads
+eggs
+fake-eggs
+parts
+var
