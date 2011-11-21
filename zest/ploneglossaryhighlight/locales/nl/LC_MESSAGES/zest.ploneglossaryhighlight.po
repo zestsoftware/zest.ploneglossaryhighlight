@@ -1,0 +1,43 @@
+# Zest Plone Glossary Highlight
+# Maurits van Rees <m.van.rees@zestsoftware.nl>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: zest.ploneglossaryhighlight 1.0\n"
+"POT-Creation-Date: 2011-11-21 14:19+0000\n"
+"PO-Revision-Date: 2011-11-21 15:22 +0100\n"
+"Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
+"Language-Team: Plone Nederland <plone-nl@lists.plone.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: nl\n"
+"Language-Name: Nederlands\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: zest.ploneglossaryhighlight\n"
+"X-Is-Fallback-For: nl-be nl-nl\n"
+
+#: Profile description
+msgid "Make highlighting PloneGlossary terms optional per page or folder."
+msgstr "Maak markeren van PloneGlossary termen optioneel per pagina of map."
+
+#: ./adapters.py:25
+msgid "No"
+msgstr "Nee"
+
+#: ./adapters.py:54
+msgid "This page, or pages contained in this folder, wants to highlight known terms from the glossary."
+msgstr "Deze pagina, of pagina's in deze map, wil bekende termen uit de begrippenlijst markeren."
+
+#: ./adapters.py:26
+msgid "Use setting of parent folder"
+msgstr "Gebruik instelling van de bovenliggende map"
+
+#: ./adapters.py:24
+msgid "Yes"
+msgstr "Ja"
+
+#: Profile title
+msgid "zest.ploneglossaryhighlight"
+msgstr "zest.ploneglossaryhighlight"
+

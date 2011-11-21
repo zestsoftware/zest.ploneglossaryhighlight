@@ -1,0 +1,43 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# Zest Plone Glossary Highlight
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: zest.ploneglossaryhighlight 1.0\n"
+"POT-Creation-Date: 2011-11-21 14:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: zest.ploneglossaryhighlight\n"
+
+#: Profile description
+msgid "Make highlighting PloneGlossary terms optional per page or folder."
+msgstr ""
+
+#: ./adapters.py:25
+msgid "No"
+msgstr ""
+
+#: ./adapters.py:54
+msgid "This page, or pages contained in this folder, wants to highlight known terms from the glossary."
+msgstr ""
+
+#: ./adapters.py:26
+msgid "Use setting of parent folder"
+msgstr ""
+
+#: ./adapters.py:24
+msgid "Yes"
+msgstr ""
+
+#: Profile title
+msgid "zest.ploneglossaryhighlight"
+msgstr ""
+
