@@ -60,6 +60,19 @@ class HighLightExtender(object):
         self.context = context
 
     def getFields(self):
+        """Get the fields.
+
+        We could add a check like this, to avoid showing the fields
+        unnecessarily, but then we should allow it for folderish items
+        as well, so never mind.
+
+        from Products.CMFCore.utils import getToolByName
+        gtool = getToolByName(self.context, 'portal_glossary', None)
+        if gtool is None:
+            return []
+        if not self.context.portal_type in gtool.getAllowedPortalTypes():
+            return []
+        """
         return self.fields
 
 
