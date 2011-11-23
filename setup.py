@@ -24,7 +24,7 @@ setup(name='zest.ploneglossaryhighlight',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'Products.PloneGlossary>1.5.0b3',
+          'Products.PloneGlossary>=1.5.0',
           'archetypes.schemaextender',
       ],
       entry_points="""
