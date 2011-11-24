@@ -22,6 +22,15 @@ Installation
 - Install it in the Add-ons control panel in Plone.
 
 
+Compatibility
+=============
+
+- Tested with Plone 3.3.5 and 4.1.2 (should be fine with earlier Plone
+  3 or 4 versions too).
+
+- Requires Products.PloneGlossary 1.5.0 or later.
+
+
 Todo
 ====
 
