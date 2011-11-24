@@ -3,6 +3,7 @@ import unittest2 as unittest
 from Products.CMFCore.utils import getToolByName
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from Products.PloneGlossary.interfaces import IOptionalHighLight
 
 from zest.ploneglossaryhighlight.adapters import YES, NO, PARENT
 from zest.ploneglossaryhighlight.testing import (
@@ -96,10 +97,13 @@ class TestInstalled(unittest.TestCase):
         doc_id = folder.invokeFactory('Document', 'doc')
         doc = folder[doc_id]
         folder.getField('highlight').set(folder, YES)
-        # The Folder type is never highlighted
+        self.assertTrue(IOptionalHighLight(folder).do_highlight())
+        # The Folder type is still never highlighted by the tool
         self.assertFalse(gtool.highlightContent(folder))
+        self.assertTrue(IOptionalHighLight(doc).do_highlight())
         self.assertTrue(gtool.highlightContent(doc))
         doc.getField('highlight').set(doc, NO)
+        self.assertFalse(IOptionalHighLight(doc).do_highlight())
         self.assertFalse(gtool.highlightContent(doc))
 
     def testHighlightDocOnFolderOff(self):
@@ -111,7 +115,10 @@ class TestInstalled(unittest.TestCase):
         doc_id = folder.invokeFactory('Document', 'doc')
         doc = folder[doc_id]
         folder.getField('highlight').set(folder, NO)
+        self.assertFalse(IOptionalHighLight(folder).do_highlight())
         self.assertFalse(gtool.highlightContent(folder))
+        self.assertFalse(IOptionalHighLight(doc).do_highlight())
         self.assertFalse(gtool.highlightContent(doc))
         doc.getField('highlight').set(doc, YES)
+        self.assertTrue(IOptionalHighLight(doc).do_highlight())
         self.assertTrue(gtool.highlightContent(doc))
