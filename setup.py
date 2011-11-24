@@ -28,6 +28,7 @@ setup(name='zest.ploneglossaryhighlight',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.CMFPlone',
           'Products.PloneGlossary>=1.5.0',
           'archetypes.schemaextender',
       ],
