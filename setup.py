@@ -31,6 +31,9 @@ setup(name='zest.ploneglossaryhighlight',
           'Products.PloneGlossary>=1.5.0',
           'archetypes.schemaextender',
       ],
+      extras_require={
+            'test': ['plone.app.testing'],
+      },
       entry_points="""
       # -*- Entry points: -*-
 
