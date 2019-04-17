@@ -3,10 +3,13 @@ from Products.Archetypes.public import BooleanField
 from Products.Archetypes.public import StringField
 from Products.Archetypes.public import SelectionWidget
 from Products.Archetypes.atapi import DisplayList
-#from Products.Archetypes.interfaces import IBaseContent
+
+# from Products.Archetypes.interfaces import IBaseContent
 from archetypes.schemaextender.field import ExtensionField
-from archetypes.schemaextender.interfaces import ISchemaExtender, \
-    IBrowserLayerAwareExtender
+from archetypes.schemaextender.interfaces import (
+    ISchemaExtender,
+    IBrowserLayerAwareExtender,
+)
 from zope.component import adapts
 from zope.interface import implements, Interface
 
@@ -14,17 +17,18 @@ from Products.PloneGlossary.interfaces import IOptionalHighLight
 
 # Our add-on browserlayer:
 from zest.ploneglossaryhighlight.interfaces import IOptionalHighLightLayer
-from zest.ploneglossaryhighlight import \
-    ZestPloneGlossaryHighlightMessageFactory as _
+from zest.ploneglossaryhighlight import ZestPloneGlossaryHighlightMessageFactory as _
 
-YES = 'yes'
-NO = 'no'
-PARENT = 'parent'
-HIGHLIGHT_VOCAB = DisplayList(data=[
-    (YES, _(u"Yes")),
-    (NO, _(u"No")),
-    (PARENT, _(u"Use setting of parent folder")),
-    ])
+YES = "yes"
+NO = "no"
+PARENT = "parent"
+HIGHLIGHT_VOCAB = DisplayList(
+    data=[
+        (YES, _(u"Yes")),
+        (NO, _(u"No")),
+        (PARENT, _(u"Use setting of parent folder")),
+    ]
+)
 
 
 class MyBooleanField(ExtensionField, BooleanField):
@@ -39,6 +43,7 @@ class HighLightExtender(object):
     """Schema extender that makes highlighting the known terms
     optional per object.
     """
+
     adapts(Interface)
     implements(ISchemaExtender, IBrowserLayerAwareExtender)
     # Don't do schema extending unless our add-on product is installed
@@ -47,14 +52,19 @@ class HighLightExtender(object):
     fields = [
         MyStringField(
             "highlight",
-            schemata='settings',
+            schemata="settings",
             default=PARENT,
             vocabulary=HIGHLIGHT_VOCAB,
             widget=SelectionWidget(
-                label=_((u"This page, or pages contained in this folder, "
-                         u"wants to highlight known terms from the glossary.")
-                         ))),
-            ]
+                label=_(
+                    (
+                        u"This page, or pages contained in this folder, "
+                        u"wants to highlight known terms from the glossary."
+                    )
+                )
+            ),
+        )
+    ]
 
     def __init__(self, context):
         self.context = context
@@ -79,6 +89,7 @@ class HighLightExtender(object):
 class OptionalHighLight(object):
     """Adapter that looks up the 'highlight' field on an object.
     """
+
     implements(IOptionalHighLight)
     adapts(Interface)
 
@@ -87,7 +98,7 @@ class OptionalHighLight(object):
 
     def do_highlight(self, default=None):
         try:
-            field = self.context.getField('highlight')
+            field = self.context.getField("highlight")
         except AttributeError:
             return default
         if not field:

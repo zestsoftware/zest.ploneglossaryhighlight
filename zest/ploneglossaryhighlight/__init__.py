@@ -1,7 +1,6 @@
 from zope.i18nmessageid import MessageFactory
 
-ZestPloneGlossaryHighlightMessageFactory = MessageFactory(
-    'zest.ploneglossaryhighlight')
+ZestPloneGlossaryHighlightMessageFactory = MessageFactory("zest.ploneglossaryhighlight")
 
 
 def initialize(context):
