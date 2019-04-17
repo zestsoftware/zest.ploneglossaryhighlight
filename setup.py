@@ -6,7 +6,7 @@ setup(
     name="zest.ploneglossaryhighlight",
     version=version,
     description="Make highlighting PloneGlossary terms optional per page or folder.",
-    long_description=open("README.rst").read() + "\n" + open("CHANGES.txt").read(),
+    long_description=open("README.rst").read() + "\n" + open("CHANGES.rst").read(),
     # Get more strings from https://pypi.org/classifiers/
     classifiers=[
         "Framework :: Plone",

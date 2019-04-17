@@ -1,1 +1,3 @@
-recursive-include zest *
+graft docs
+graft zest
+include *.rst
