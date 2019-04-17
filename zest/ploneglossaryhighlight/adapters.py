@@ -4,7 +4,7 @@ from Products.Archetypes.public import StringField
 from Products.Archetypes.public import SelectionWidget
 from Products.Archetypes.atapi import DisplayList
 
-# from Products.Archetypes.interfaces import IBaseContent
+from Products.Archetypes.interfaces import IBaseContent
 from archetypes.schemaextender.field import ExtensionField
 from archetypes.schemaextender.interfaces import (
     ISchemaExtender,
@@ -91,16 +91,13 @@ class OptionalHighLight(object):
     """
 
     implements(IOptionalHighLight)
-    adapts(Interface)
+    adapts(IBaseContent)
 
     def __init__(self, context):
         self.context = context
 
     def do_highlight(self, default=None):
-        try:
-            field = self.context.getField("highlight")
-        except AttributeError:
-            return default
+        field = self.context.getField("highlight")
         if not field:
             return default
         value = field.get(self.context)
