@@ -7,15 +7,13 @@ that field you can specify for a page whether terms on it should be
 highlighted.  Values can be yes, no, or use the value of the parent
 (which is the default).
 
-.. _`Products.PloneGlossary`: http://pypi.python.org/pypi/Products.PloneGlossary
+.. _`Products.PloneGlossary`: https://pypi.org/project/Products.PloneGlossary
 
 
 Installation
 ============
 
 - Add it to the eggs option of the zope instance in your buildout.
-  Add it to the zcml option as well if you are on Plone 3.2 or lower
-  (untested).
 
 - Restart your Zope instance.
 
@@ -25,8 +23,7 @@ Installation
 Compatibility
 =============
 
-- Tested with Plone 3.3.5 and 4.1.2 (should be fine with earlier Plone
-  3 or 4 versions too).
+- Tested with Plone 4.3 on Python 2.7.
 
 - Requires Products.PloneGlossary 1.5.0 or later.
 
