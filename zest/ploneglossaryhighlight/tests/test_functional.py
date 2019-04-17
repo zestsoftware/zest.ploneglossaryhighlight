@@ -88,6 +88,20 @@ class TestInstalled(unittest.TestCase):
         doc.getField("highlight").set(doc, NO)
         self.assertFalse(gtool.highlightContent(doc))
 
+    def testHighlightBadValue(self):
+        portal = self.layer["portal"]
+        gtool = getToolByName(portal, "portal_glossary")
+        setRoles(portal, TEST_USER_ID, ("Manager",))
+        new_id = portal.invokeFactory("Document", "doc")
+        doc = portal[new_id]
+        doc.getField("highlight").set(doc, "hello kitty")
+        self.assertIsNone(IOptionalHighLight(doc).do_highlight())
+        self.assertEqual(IOptionalHighLight(doc).do_highlight("foo"), "foo")
+        # The tool will fall back to its own default.
+        self.assertTrue(gtool.highlightContent(doc))
+        gtool.highlight_content = False
+        self.assertFalse(gtool.highlightContent(doc))
+
     def testHighlightDocOffFolderOn(self):
         portal = self.layer["portal"]
         gtool = getToolByName(portal, "portal_glossary")
@@ -122,3 +136,17 @@ class TestInstalled(unittest.TestCase):
         doc.getField("highlight").set(doc, YES)
         self.assertTrue(IOptionalHighLight(doc).do_highlight())
         self.assertTrue(gtool.highlightContent(doc))
+
+    def testHighlightRootParent(self):
+        portal = self.layer["portal"]
+        gtool = getToolByName(portal, "portal_glossary")
+        setRoles(portal, TEST_USER_ID, ("Manager",))
+        doc_id = portal.invokeFactory("Document", "doc")
+        doc = portal[doc_id]
+        doc.getField("highlight").set(doc, PARENT)
+        self.assertIsNone(IOptionalHighLight(doc).do_highlight())
+        self.assertEqual(IOptionalHighLight(doc).do_highlight("foo"), "foo")
+        # Default of the tool is still true.
+        self.assertTrue(gtool.highlightContent(doc))
+        gtool.highlight_content = False
+        self.assertFalse(gtool.highlightContent(doc))
