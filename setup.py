@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = "1.1dev"
+version = "1.1.0.dev0"
 
 setup(
     name="zest.ploneglossaryhighlight",
@@ -11,11 +11,12 @@ setup(
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.7",
     ],
-    keywords="",
+    keywords="plone glossary highlight",
     author="Maurits van Rees",
     author_email="m.van.rees@zestsoftware.nl",
     url="https://github.com/zestsoftware/zest.ploneglossaryhighlight",
