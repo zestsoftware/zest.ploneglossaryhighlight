@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.1 (unreleased)
-----------------
+2.0.0 (unreleased)
+------------------
 
 - Register the default adapter only for Archetypes base content, instead of everything.
   [maurits]
