@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.0 (unreleased)
+2.0.0 (2019-04-26)
 ------------------
 
 - Added Dexterity support in a ``[dexterity]`` extra requirement in ``setup.py``.
