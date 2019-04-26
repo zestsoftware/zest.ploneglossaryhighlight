@@ -31,10 +31,9 @@
         title="Optional glossary highlight"
         description="Makes highlighting of glossary terms configurable per content item"
         provides=".dx.IOptionalHighLightBehavior"
-        factory=".dx.OptionalHighLight"
-        for="plone.dexterity.interfaces.IDexterityContent"
         name_only="true"
         />
+    <adapter factory=".dx.OptionalHighLightAdapter" />
   </configure>
   
 </configure>

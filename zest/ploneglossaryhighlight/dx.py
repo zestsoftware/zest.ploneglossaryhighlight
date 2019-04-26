@@ -1,6 +1,6 @@
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
+from Products.PloneGlossary.interfaces import IOptionalHighLight
 from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
@@ -42,9 +42,9 @@ class IOptionalHighLightBehavior(model.Schema):
     )
 
 
-@implementer(IOptionalHighLightBehavior)
-@adapter(IDexterityContent)
-class OptionalHighLight(BaseOptionalHighLight):
+@implementer(IOptionalHighLight)
+@adapter(IOptionalHighLightBehavior)
+class OptionalHighLightAdapter(BaseOptionalHighLight):
     """Adapter that looks up the 'highlight' field on a DX object.
     """
 
