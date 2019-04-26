@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-26 11:52+0000\n"
+"POT-Creation-Date: 2019-04-26 15:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,42 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: zest.ploneglossaryhighlight\n"
 
-#: ./configure.zcml:17
+#: ./configure.zcml:19
 msgid "Make highlighting PloneGlossary terms optional per page or folder."
 msgstr ""
 
-#: ./adapters.py:28
+#: ./configure.zcml:35
+msgid "Makes highlighting of glossary terms configurable per content item"
+msgstr ""
+
+#: ./at.py:31
+#: ./dx.py:20
 msgid "No"
 msgstr ""
 
-#: ./adapters.py:59
+#: ./configure.zcml:35
+msgid "Optional glossary highlight"
+msgstr ""
+
+#: ./dx.py:31
+msgid "Settings"
+msgstr ""
+
+#: ./at.py:62
+#: ./dx.py:33
 msgid "This page, or pages contained in this folder, wants to highlight known terms from the glossary."
 msgstr ""
 
-#: ./adapters.py:29
+#: ./at.py:32
+#: ./dx.py:21
 msgid "Use setting of parent folder"
 msgstr ""
 
-#: ./adapters.py:27
+#: ./at.py:30
+#: ./dx.py:19
 msgid "Yes"
 msgstr ""
 
-#: ./configure.zcml:17
+#: ./configure.zcml:19
 msgid "zest.ploneglossaryhighlight"
 msgstr ""
