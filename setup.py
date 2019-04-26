@@ -32,6 +32,7 @@ setup(
     ],
     extras_require={
         "archetypes": ["archetypes.schemaextender"],
+        "dexterity": ["plone.behavior"],
         "test": ["plone.app.testing"],
     },
     entry_points="""
