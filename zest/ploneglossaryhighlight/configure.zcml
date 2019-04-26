@@ -29,7 +29,7 @@
     <plone:behavior
         name="zest.ploneglossaryhighlight"
         title="Optional glossary highlight"
-        description="Makes highlighting of glossary terms configurable per content item"
+        description="Make highlighting PloneGlossary terms optional per page or folder."
         provides=".dx.IOptionalHighLightBehavior"
         name_only="true"
         />

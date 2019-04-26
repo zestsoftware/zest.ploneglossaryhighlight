@@ -1,10 +1,10 @@
 # Zest Plone Glossary Highlight
-# Maurits van Rees <m.van.rees@zestsoftware.nl>, 2011.
+# Maurits van Rees <m.van.rees@zestsoftware.nl>, 2011-2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: zest.ploneglossaryhighlight 1.0\n"
-"POT-Creation-Date: 2019-04-26 15:27+0000\n"
-"PO-Revision-Date: 2011-11-21 15:22 +0100\n"
+"Project-Id-Version: zest.ploneglossaryhighlight 2.0.0\n"
+"POT-Creation-Date: 2019-04-26 15:31+0000\n"
+"PO-Revision-Date: 2019-04-26 17:30+0200\n"
 "Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
 "Language-Team: Plone Nederland <plone-nl@lists.plone.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,10 +21,6 @@ msgstr ""
 msgid "Make highlighting PloneGlossary terms optional per page or folder."
 msgstr "Maak markeren van PloneGlossary termen optioneel per pagina of map."
 
-#: ./configure.zcml:35
-msgid "Makes highlighting of glossary terms configurable per content item"
-msgstr ""
-
 #: ./at.py:31
 #: ./dx.py:20
 msgid "No"
@@ -32,11 +28,11 @@ msgstr "Nee"
 
 #: ./configure.zcml:35
 msgid "Optional glossary highlight"
-msgstr ""
+msgstr "Optioneel markeren van PloneGlossary termen"
 
 #: ./dx.py:31
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: ./at.py:62
 #: ./dx.py:33
