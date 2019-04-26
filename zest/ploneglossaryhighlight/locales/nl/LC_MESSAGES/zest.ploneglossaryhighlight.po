@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zest.ploneglossaryhighlight 1.0\n"
-"POT-Creation-Date: 2011-11-21 14:19+0000\n"
+"POT-Creation-Date: 2019-04-26 11:52+0000\n"
 "PO-Revision-Date: 2011-11-21 15:22 +0100\n"
 "Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
 "Language-Team: Plone Nederland <plone-nl@lists.plone.org>\n"
@@ -17,27 +17,26 @@ msgstr ""
 "Domain: zest.ploneglossaryhighlight\n"
 "X-Is-Fallback-For: nl-be nl-nl\n"
 
-#: Profile description
+#: ./configure.zcml:17
 msgid "Make highlighting PloneGlossary terms optional per page or folder."
 msgstr "Maak markeren van PloneGlossary termen optioneel per pagina of map."
 
-#: ./adapters.py:25
+#: ./adapters.py:28
 msgid "No"
 msgstr "Nee"
 
-#: ./adapters.py:54
+#: ./adapters.py:59
 msgid "This page, or pages contained in this folder, wants to highlight known terms from the glossary."
 msgstr "Deze pagina, of pagina's in deze map, wil bekende termen uit de begrippenlijst markeren."
 
-#: ./adapters.py:26
+#: ./adapters.py:29
 msgid "Use setting of parent folder"
 msgstr "Gebruik instelling van de bovenliggende map"
 
-#: ./adapters.py:24
+#: ./adapters.py:27
 msgid "Yes"
 msgstr "Ja"
 
-#: Profile title
+#: ./configure.zcml:17
 msgid "zest.ploneglossaryhighlight"
 msgstr "zest.ploneglossaryhighlight"
-
