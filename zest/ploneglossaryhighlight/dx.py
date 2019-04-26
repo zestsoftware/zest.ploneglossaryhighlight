@@ -54,6 +54,6 @@ class OptionalHighLightAdapter(BaseOptionalHighLight):
     def highlight(self):
         return self.context.highlight
 
-    @highlight.setter
-    def highlight(self, value):
-        self.context.highlight = value
+    # @highlight.setter
+    # def highlight(self, value):
+    #     self.context.highlight = value

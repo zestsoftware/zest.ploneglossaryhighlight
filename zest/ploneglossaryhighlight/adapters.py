@@ -17,14 +17,11 @@ class BaseOptionalHighLight(object):
     including looking at parent settings if needed.
     """
 
+    # This is expected to be overridden in sub classes.
+    highlight = None
+
     def __init__(self, context):
         self.context = context
-
-    @property
-    def highlight(self):
-        # This is expected to be overridden in sub classes.
-        if base_hasattr(self.context, "highlight"):
-            return self.context.highlight
 
     def do_highlight(self, default=None):
         value = self.highlight
