@@ -9,7 +9,7 @@ from archetypes.schemaextender.interfaces import (
     ISchemaExtender,
     IBrowserLayerAwareExtender,
 )
-from zope.component import adapts
+from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Interface
 
@@ -43,12 +43,12 @@ class MyStringField(ExtensionField, StringField):
 
 
 @implementer(ISchemaExtender, IBrowserLayerAwareExtender)
+@adapter(Interface)
 class HighLightExtender(object):
     """Schema extender that makes highlighting the known terms
     optional per object.
     """
 
-    adapts(Interface)
     # Don't do schema extending unless our add-on product is installed
     # on this Plone site.
     layer = IOptionalHighLightLayer
@@ -90,10 +90,10 @@ class HighLightExtender(object):
 
 
 @implementer(IOptionalHighLight)
+@adapter(IBaseContent)
 class OptionalHighLight(BaseOptionalHighLight):
     """Adapter that looks up the 'highlight' field on an AT object.
     """
-    adapts(IBaseContent)
 
     def __init__(self, context):
         self.context = context
