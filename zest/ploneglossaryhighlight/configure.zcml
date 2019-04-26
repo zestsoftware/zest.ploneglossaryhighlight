@@ -32,7 +32,6 @@
         description="Makes highlighting of glossary terms configurable per content item"
         provides=".dx.IOptionalHighLightBehavior"
         factory=".dx.OptionalHighLight"
-        marker="Products.PloneGlossary.interfaces.IOptionalHighLight"
         for="plone.dexterity.interfaces.IDexterityContent"
         name_only="true"
         />
