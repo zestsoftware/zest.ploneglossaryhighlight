@@ -1,4 +1,3 @@
-from Acquisition import aq_inner, aq_parent
 from Products.Archetypes.public import BooleanField
 from Products.Archetypes.public import StringField
 from Products.Archetypes.public import SelectionWidget
@@ -15,11 +14,13 @@ from zope.interface import implements, Interface
 
 from Products.PloneGlossary.interfaces import IOptionalHighLight
 
+from zest.ploneglossaryhighlight.adapters import BaseOptionalHighLight
+from zest.ploneglossaryhighlight.adapters import YES
+from zest.ploneglossaryhighlight.adapters import NO
+from zest.ploneglossaryhighlight.adapters import PARENT
+
 # Our add-on browserlayer:
 from zest.ploneglossaryhighlight.interfaces import IOptionalHighLightLayer
-from zest.ploneglossaryhighlight.interfaces import YES
-from zest.ploneglossaryhighlight.interfaces import NO
-from zest.ploneglossaryhighlight.interfaces import PARENT
 from zest.ploneglossaryhighlight import ZestPloneGlossaryHighlightMessageFactory as _
 
 
@@ -87,8 +88,8 @@ class HighLightExtender(object):
         return self.fields
 
 
-class OptionalHighLight(object):
-    """Adapter that looks up the 'highlight' field on an object.
+class OptionalHighLight(BaseOptionalHighLight):
+    """Adapter that looks up the 'highlight' field on an AT object.
     """
 
     implements(IOptionalHighLight)
@@ -97,19 +98,8 @@ class OptionalHighLight(object):
     def __init__(self, context):
         self.context = context
 
-    def do_highlight(self, default=None):
+    @property
+    def highlight(self):
         field = self.context.getField("highlight")
-        if not field:
-            return default
-        value = field.get(self.context)
-        if value == PARENT:
-            parent = aq_parent(aq_inner(self.context))
-            optional = IOptionalHighLight(parent, None)
-            if optional is not None:
-                return optional.do_highlight(default)
-            return default
-        if value == YES:
-            return True
-        if value == NO:
-            return False
-        return default
+        if field:
+            return field.get(self.context)

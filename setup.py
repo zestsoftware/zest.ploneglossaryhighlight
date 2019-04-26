@@ -32,7 +32,7 @@ setup(
     ],
     extras_require={
         "archetypes": ["archetypes.schemaextender"],
-        "dexterity": ["plone.behavior"],
+        "dexterity": ["plone.behavior", "plone.dexterity"],
         "test": ["plone.app.testing"],
     },
     entry_points="""
