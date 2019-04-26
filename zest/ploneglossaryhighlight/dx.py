@@ -1,10 +1,12 @@
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from Products.PloneGlossary.interfaces import IOptionalHighLight
-from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import provider
+from zope.schema import Choice
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 from zest.ploneglossaryhighlight.adapters import BaseOptionalHighLight
 from zest.ploneglossaryhighlight.adapters import YES
@@ -13,12 +15,12 @@ from zest.ploneglossaryhighlight.adapters import PARENT
 from zest.ploneglossaryhighlight import ZestPloneGlossaryHighlightMessageFactory as _
 
 
-# TODO
-HIGHLIGHT_VOCAB = (
-    (YES, _(u"Yes")),
-    (NO, _(u"No")),
-    (PARENT, _(u"Use setting of parent folder")),
+_terms = (
+    SimpleTerm(YES, title=_(u"Yes")),
+    SimpleTerm(NO, title=_(u"No")),
+    SimpleTerm(PARENT, title=_(u"Use setting of parent folder")),
 )
+HIGHLIGHT_VOCAB = SimpleVocabulary(_terms)
 
 
 @provider(IFormFieldProvider)
@@ -26,8 +28,8 @@ class IOptionalHighLightBehavior(model.Schema):
     """Behavior extender that makes highlighting the known terms optional.
     """
 
-    # TODO fix schema.
-    highlight = schema.ASCIILine(
+    model.fieldset("settings", label=_(u"Settings"), fields=["highlight"])
+    highlight = Choice(
         title=_(
             (
                 u"This page, or pages contained in this folder, "
@@ -35,10 +37,10 @@ class IOptionalHighLightBehavior(model.Schema):
             )
         ),
         description=u"",
-        required=False,
+        vocabulary=HIGHLIGHT_VOCAB,
         default=PARENT,
-        # vocabulary=HIGHLIGHT_VOCAB,
-        # widget=SelectionWidget(),
+        required=True,
+        readonly=False,
     )
 
 
