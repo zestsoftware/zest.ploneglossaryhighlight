@@ -17,11 +17,12 @@ from Products.PloneGlossary.interfaces import IOptionalHighLight
 
 # Our add-on browserlayer:
 from zest.ploneglossaryhighlight.interfaces import IOptionalHighLightLayer
+from zest.ploneglossaryhighlight.interfaces import YES
+from zest.ploneglossaryhighlight.interfaces import NO
+from zest.ploneglossaryhighlight.interfaces import PARENT
 from zest.ploneglossaryhighlight import ZestPloneGlossaryHighlightMessageFactory as _
 
-YES = "yes"
-NO = "no"
-PARENT = "parent"
+
 HIGHLIGHT_VOCAB = DisplayList(
     data=[
         (YES, _(u"Yes")),

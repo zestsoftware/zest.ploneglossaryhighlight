@@ -5,7 +5,7 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from Products.PloneGlossary.interfaces import IOptionalHighLight
 
-from zest.ploneglossaryhighlight.adapters import YES, NO, PARENT
+from zest.ploneglossaryhighlight.interfaces import YES, NO, PARENT
 from zest.ploneglossaryhighlight.testing import (
     PLONEGLOSSARYHIGHLIGHT_NOT_INSTALLED_INTEGRATION_TESTING,
     PLONEGLOSSARYHIGHLIGHT_INTEGRATION_TESTING,

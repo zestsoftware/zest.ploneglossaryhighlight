@@ -29,9 +29,11 @@ setup(
         "setuptools",
         "Products.CMFPlone",
         "Products.PloneGlossary>=1.5.0",
-        "archetypes.schemaextender",
     ],
-    extras_require={"test": ["plone.app.testing"]},
+    extras_require={
+        "archetypes": ["archetypes.schemaextender"],
+        "test": ["plone.app.testing"],
+    },
     entry_points="""
       # -*- Entry points: -*-
 
