@@ -14,11 +14,12 @@ Installation
 ============
 
 - Add it to the eggs option of the zope instance in your buildout.
-  When you want Archetypes support, please use ``zest.ploneglossaryhighlight[archetypes]``.
-  When you want Dexterity support, please use ``zest.ploneglossaryhighlight[dexterity]``.
-  Or use both: ``zest.ploneglossaryhighlight[archetypes, dexterity]``.
 
-- Restart your Zope instance.
+  - When you want Archetypes support, please use ``zest.ploneglossaryhighlight[archetypes]``.
+  - When you want Dexterity support, please use ``zest.ploneglossaryhighlight[dexterity]``.
+  - Or use both: ``zest.ploneglossaryhighlight[archetypes, dexterity]``.
+
+- Run buildout and restart your Zope instance.
 
 - Go to the Add-ons control panel in Plone.
 
@@ -30,6 +31,6 @@ Installation
 Compatibility
 =============
 
-- Tested with Plone 4.3 on Python 2.7.
+- Requires Products.PloneGlossary 1.5.0 or later.  Tested with latest 1.7.3.
 
-- Requires Products.PloneGlossary 1.5.0 or later.
+- Tested with Plone 4.3 on Python 2.7.  Current latest release of PloneGlossary does not work on Plone 5.
